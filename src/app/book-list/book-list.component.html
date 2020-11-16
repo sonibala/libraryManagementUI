@@ -1,0 +1,30 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">
+      <h2>Book List</h2>
+    </div>
+    <div class="panel-body">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Book</th>
+            <th>User</th>
+            <th>Author</th>
+            <th>Publisher</th>
+            <th>BookCategory</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let book of libraries | async">
+            <td>{{book.book}}</td>
+            <td>{{book.user}}</td>
+            <td>{{book.author}}</td>
+            <td>{{book.publisher}}</td>
+            <td>{{book.bookCategory}}</td>
+            <td><button (click)="deleteBook(library.id)" class="btn btn-danger">Delete</button>
+                <button (click)="bookDetails(library.id)" class="btn btn-info" style="margin-left: 10px">Details</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
